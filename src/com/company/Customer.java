@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Customer {
     private String name;
     private ArrayList<Double> transactionsArrayList = new ArrayList<Double>();
+    private double accauntBalance;
 
     public Customer(String name) {
         this.name = name;
+        this.accauntBalance = 0;
     }
 
     public void showCustomerTransaction()
@@ -17,6 +19,7 @@ public class Customer {
         {
             System.out.println(transactionsArrayList.get(i));
         }
+        System.out.println("account balance" + accauntBalance);
     }
 
     public void addTransactionsArrayList(double transacionValue) {
@@ -25,5 +28,12 @@ public class Customer {
 
     public String getName() {
         return name;
+    }
+    public void finalazeTransaction()
+    {
+        for(int i =0;i<transactionsArrayList.size();i++)
+        {
+            accauntBalance += transactionsArrayList.get(i);
+        }
     }
 }
